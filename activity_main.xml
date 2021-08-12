@@ -1,38 +1,112 @@
-package com.example.calculator;
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="30dp"
+    android:layout_marginLeft="30dp"
+    android:layout_marginEnd="30dp"
+    android:layout_marginRight="30dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
-import androidx.appcompat.app.AppCompatActivity;
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-import android.content.Intent;
-import android.os.Bundle;
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/calculator"
+        android:contentDescription="TODO"
+        tools:ignore="ContentDescription" />
 
-public class SplashActivity extends AppCompatActivity {
+    <EditText
+        android:id="@+id/etFirstValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Enter First Value"
+        android:inputType="number"
+        android:padding="10dp" />
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+    <EditText
+        android:id="@+id/etSecondValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Enter Second value"
+        android:inputType="number"
+        android:padding="10dp" />
 
-        getSupportActionBar().hide();
+    <TextView
+        android:id="@+id/tvAns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:text="TextView"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-        Thread thread= new Thread(){
-            public void run(){
-                try{
-                    sleep(4000);
-                }
-                catch (Exception e)
-                {
-                    e.printStackTrace();
-                }
-                finally {
-                    Intent intent=new Intent(SplashActivity.this,MainActivity.class);
-                    startActivity(intent);
-                }
-            }
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:text="+"
+        android:textColor="#FF5722"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:backgroundTint="#090808" />
+
+    <Button
+        android:id="@+id/btnSubtract"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:text="-"
+        android:textColor="#FF5722"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:backgroundTint="#090808" />
+
+    <Button
+        android:id="@+id/btnMultiply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:text="*"
+        android:textColor="#FF5722"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:backgroundTint="#090808" />
+
+    <Button
+        android:id="@+id/btnDivide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:text="/"
+        android:textColor="#FF5722"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:backgroundTint="#090808" />
 
 
-        };thread.start();
-
-
-
-    }
-}
+</LinearLayout>
